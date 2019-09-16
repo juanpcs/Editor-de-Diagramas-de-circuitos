@@ -1,13 +1,15 @@
 package vista2;
 
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import javax.swing.JPanel;
 
-public class Movimiento implements MouseListener, MouseMotionListener{
+public class Movimiento implements MouseListener, MouseMotionListener, ActionListener{
 	
 	private int x,y;
 	
@@ -60,6 +62,13 @@ public class Movimiento implements MouseListener, MouseMotionListener{
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
