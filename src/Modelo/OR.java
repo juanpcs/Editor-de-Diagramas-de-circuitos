@@ -3,11 +3,11 @@ package Modelo;
 import javax.swing.JOptionPane;
 
 
-public class AND extends Compuerta_Logica{
+public class OR extends Compuerta_Logica{
 	Compuerta_Logica C = new Compuerta_Logica();
 	int entrada1, entrada2, salida;
 
-	public AND() {
+	public OR() {
 		
 	}
 	
@@ -21,12 +21,12 @@ public class AND extends Compuerta_Logica{
     	super.setEntrada(super.entrada);
     	super.setEntrada2(super.entrada2);
  
-    if (super.entrada !=1 || super.entrada2 !=1) {
-    	super.salida=0;
+    if (super.entrada !=0 || super.entrada2 !=0) {
+    	super.salida=1;
     	super.setSalida(super.salida);	
     }
     else {
-    	super.salida=1;
+    	super.salida=0;
     	super.setSalida(super.salida);	
     	
     }

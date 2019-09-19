@@ -28,10 +28,10 @@ public class Movimiento implements MouseListener, MouseMotionListener, ActionLis
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
 			Component c=arg0.getComponent();
-		if ((c instanceof JPanel || c instanceof JButton)&&arg0.getComponent().getX()<1000) {
-		arg0.getComponent().setLocation((arg0.getX()+arg0.getComponent().getX())-x, (arg0.getY()+arg0.getComponent().getY())-y);}
+		if (c instanceof JButton&&arg0.getComponent().getX()<1000) {
+		arg0.getComponent().setLocation((arg0.getX()+arg0.getComponent().getX())-x, (arg0.getY()+arg0.getComponent().getY())-y);
 		if (arg0.getComponent().getX()>=1000) {
-			arg0.getComponent().setLocation(995, arg0.getComponent().getY());}
+			arg0.getComponent().setLocation(999, arg0.getComponent().getY());}
 		if (arg0.getComponent().getX()<=1) {
 			arg0.getComponent().setLocation(2, arg0.getComponent().getY());}
 	
@@ -41,7 +41,7 @@ public class Movimiento implements MouseListener, MouseMotionListener, ActionLis
 			arg0.getComponent().setLocation(arg0.getComponent().getX(),599);}
 		
 			
-		}
+		}}
 			
 		
 	
