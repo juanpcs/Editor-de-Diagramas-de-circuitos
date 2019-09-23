@@ -2,15 +2,12 @@ package Modelo;
 
 import javax.swing.JOptionPane;
 
-import Controlador.controlador;
+public class NAND extends Compuerta_Logica{
 
-
-public class AND extends Compuerta_Logica{
 	Compuerta_Logica C = new Compuerta_Logica();
-	controlador Con = new controlador();
 	int entrada1, entrada2, salida;
 
-	public AND() {
+	public NAND() {
 		
 	}
 	
@@ -25,18 +22,21 @@ public class AND extends Compuerta_Logica{
     	super.setEntrada2(super.entrada2);
  
     if (super.entrada !=1 || super.entrada2 !=1) {
-    	super.salida=0;
+    	super.salida=1;
     	super.setSalida(super.salida);	
     }
     else {
-    	super.salida=1;
+    	super.salida=0;
     	super.setSalida(super.salida);	
     	
     }
     
-    Con.ingresarcompuerta(new Compuerta_Logica(super.getEntrada(),super.getEntrada2(),super.getSalida()));
     return super.salida;
 	
 }
-
+	
+	
+	
+	
+	
 }

@@ -10,6 +10,8 @@ public Compuerta_Logica() {
 	
 }
 
+
+
 public int getEntrada2() {
 	return entrada2;
 }
@@ -18,9 +20,10 @@ public void setEntrada2(int entrada2) {
 	this.entrada2 = entrada2;
 }
 
-public Compuerta_Logica(int entrada, int salida) {
+public Compuerta_Logica(int entrada, int entrada2, int salida) {
 	
 	this.entrada = entrada;
+	this.entrada2 = entrada2;
 	this.salida = salida;
 }
 

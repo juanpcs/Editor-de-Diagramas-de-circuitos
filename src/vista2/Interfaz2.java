@@ -19,10 +19,17 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import Controlador.controlador;
+
 import java.util.Random;
 import Modelo.AND;
 import Modelo.OR;
-
+import Modelo.NAND;
+import Modelo.NOR;
+import Modelo.NOT;
+import Modelo.XOR;
+import Modelo.XNOR;
 
 public class Interfaz2 extends JFrame implements ActionListener, MouseMotionListener, MouseListener, MouseWheelListener{
 	//Declaracion de variables a utilizar y aplicacion de herencia
@@ -35,6 +42,12 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 	
 	AND AND= new AND();
 	OR OR= new OR();
+	NAND NAND = new NAND();
+	NOR NOR = new NOR();
+	NOT NOT = new NOT();
+	XOR XOR = new XOR();
+	XNOR XNOR = new XNOR();
+	controlador C=new controlador();
 	
 	//Creacion del constructor y de los componentes que integraran la aplicacion
 	public Interfaz2() {
@@ -255,11 +268,11 @@ public void creaXNOR() {
 	//funcion encaragada de crear las lines para representar las conexiones entre compuertas
 	
 		public void LineaVerticall() {
-			LV =new JLabel("|\n"+"|\n"+"|\n"+"|\n"+"|\n");
-		    LV.setFont(new Font("Serif", Font.PLAIN, 18));
+			LV =new JLabel("|");
+		    LV.setFont(new Font("Serif", Font.PLAIN, 100));
 		    LV.setForeground(new Color((int)(Math.random() * 0x1000000)));
 		    LV.setBackground(Color.black);
-		    LV.setBounds(400, 200, 30, 100);
+		    LV.setBounds(400, 200, 30, 200);
 		    LV.addMouseMotionListener(this);
 		    LV.addMouseListener(this);
 		    panelP.add(LV);	}
@@ -297,7 +310,7 @@ public void creaXNOR() {
 		try {
 			
 			if(evento1.getSource()==botonAND){
-				System.out.println("hola");
+				
 				creaAND();
 			}
 			
@@ -325,7 +338,7 @@ public void creaXNOR() {
 			
 			
 			if(evento1.getSource()==boton2) {
-				System.out.println(OR.resultado());
+				System.out.println(NAND.resultado());
 				
 			}
 			
@@ -336,7 +349,7 @@ public void creaXNOR() {
 			
 			
 			if(evento1.getSource()==boton3) {
-				System.out.println(OR.resultado());
+				System.out.println(NOR.resultado());
 				
 			}
 			
@@ -347,7 +360,7 @@ public void creaXNOR() {
 			
 			
 			if(evento1.getSource()==boton4) {
-				System.out.println(OR.resultado());
+				System.out.println(NOT.resultado());
 				
 			}
 			
@@ -358,7 +371,7 @@ public void creaXNOR() {
 			
 			
 			if(evento1.getSource()==boton5) {
-				System.out.println(OR.resultado());
+				System.out.println(XOR.resultado());
 				
 			}
 			
@@ -369,7 +382,7 @@ public void creaXNOR() {
 			
 			
 			if(evento1.getSource()==boton6) {
-				System.out.println(OR.resultado());
+				System.out.println(XNOR.resultado());
 				
 			}
 			
@@ -380,8 +393,8 @@ public void creaXNOR() {
 			if(evento1.getSource()==botonLineaV) {
 				LineaVerticall();}
 			
-			if(evento1.getSource()==botonNAND) {
-				System.out.print("|\n"+"|\n"+"|\n"+"|\n"+"|\n");;}
+			//if(evento1.getSource()==botonNAND) {
+				//System.out.print("|\n"+"|\n"+"|\n"+"|\n"+"|\n");;}
 			
 			
 			}
