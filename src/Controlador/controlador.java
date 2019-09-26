@@ -25,6 +25,9 @@ public class controlador {
 	
 	public controlador ingresarcompuerta(Compuerta_Logica comp){
 		
+		
+		
+		
 		Nodo nuevonodo = new Nodo(comp); 
 
 		Nodo Compuerta =null;
@@ -51,6 +54,25 @@ public class controlador {
 			return this;
 		
 }
+	public String mostrar(){
+		String str="";
+		
+		if(tamaño!=0){
+
+			Nodo mide= inicio;
+			
+			if (mide!=null){ 
+			for (int i=0;i<this.tamaño;i++){
+			str= str+ mide.dato.getSalida()+"\n";
+
+			mide=mide.siguiente;
+			}
+			str= "\nPIAL S.A "+"\nFichas de clientes\n"+ str;
+			}}
+		else  str ="\n*****************LA LISTA SE ENCUENTRA VACIA***************";
+		return str;
+		
+		}
 
 	
 	

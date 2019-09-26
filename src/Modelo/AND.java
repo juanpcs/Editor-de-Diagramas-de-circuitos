@@ -34,9 +34,25 @@ public class AND extends Compuerta_Logica{
     	
     }
     
-    Con.ingresarcompuerta(new Compuerta_Logica(super.getEntrada(),super.getEntrada2(),super.getSalida()));
     return super.salida;
 	
 }
+    
+   public int entrada1() {
+	   return super.entrada;
+	   
+   } 
+   
+   public int entrada2() {
+	   return super.entrada2;
+   }
+    
+  public int salida() {
+	  return super.salida;
+  }
+    
+    public String mostrar() {
+    	return Con.mostrar();
+    }
 
 }

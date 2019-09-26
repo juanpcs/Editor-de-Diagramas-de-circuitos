@@ -35,7 +35,18 @@ public class NAND extends Compuerta_Logica{
 	
 }
 	
-	
+    public int entrada1() {
+ 	   return super.entrada;
+ 	   
+    } 
+    
+    public int entrada2() {
+ 	   return super.entrada2;
+    }
+     
+   public int salida() {
+ 	  return super.salida;
+   }	
 	
 	
 	

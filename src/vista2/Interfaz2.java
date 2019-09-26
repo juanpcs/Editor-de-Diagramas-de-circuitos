@@ -24,6 +24,7 @@ import Controlador.controlador;
 
 import java.util.Random;
 import Modelo.AND;
+import Modelo.Compuerta_Logica;
 import Modelo.OR;
 import Modelo.NAND;
 import Modelo.NOR;
@@ -37,7 +38,7 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 	private JPanel panelP;
 	private JLabel E1, E5, LV;
 	private JTextField caja1,caja2;
-	private JButton boton, boton1,boton2,boton3,boton4,boton5,boton6, botonLineaH, botonLineaV,botonAND,botonOR,botonNAND,botonNOR, botonNOT, botonXOR, botonXNOR;
+	private JButton botonprueba,boton, boton1,boton2,boton3,boton4,boton5,boton6, botonLineaH, botonLineaV,botonAND,botonOR,botonNAND,botonNOR, botonNOT, botonXOR, botonXNOR;
 	int tamaño=100;
 	
 	AND AND= new AND();
@@ -47,6 +48,7 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 	NOT NOT = new NOT();
 	XOR XOR = new XOR();
 	XNOR XNOR = new XNOR();
+	Compuerta_Logica Con = new Compuerta_Logica();
 	controlador C=new controlador();
 	
 	//Creacion del constructor y de los componentes que integraran la aplicacion
@@ -153,6 +155,12 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 		    botonLineaV.setText("Insertar Conexion Vertical");
 			panelP.add(botonLineaV);
 			botonLineaV.addActionListener(this);
+			
+			botonprueba = new JButton();
+		    botonprueba.setBounds(402,0,200,20);
+		    botonprueba.setText("Prueba");
+			panelP.add(botonprueba);
+			botonprueba.addActionListener(this);
 			
 		    
 		
@@ -309,6 +317,12 @@ public void creaXNOR() {
 	public void actionPerformed(ActionEvent evento1) {
 		try {
 			
+			if(evento1.getSource()==botonprueba){
+				JOptionPane.showMessageDialog(null, C.mostrar());
+			}
+			
+			
+			
 			if(evento1.getSource()==botonAND){
 				
 				creaAND();
@@ -317,6 +331,8 @@ public void creaXNOR() {
 			
 			if(evento1.getSource()==boton) {
 				System.out.println(AND.resultado());
+				
+				 C.ingresarcompuerta(new Compuerta_Logica(AND.entrada1(),AND.entrada2(),AND.salida()));
 				
 			}
 			
@@ -328,6 +344,7 @@ public void creaXNOR() {
 			
 			if(evento1.getSource()==boton1) {
 				System.out.println(OR.resultado());
+				 C.ingresarcompuerta(new Compuerta_Logica(OR.entrada1(),OR.entrada2(),OR.salida()));
 				
 			}
 			
@@ -339,6 +356,7 @@ public void creaXNOR() {
 			
 			if(evento1.getSource()==boton2) {
 				System.out.println(NAND.resultado());
+				C.ingresarcompuerta(new Compuerta_Logica(NAND.entrada1(),NAND.entrada2(),NAND.salida()));
 				
 			}
 			
@@ -350,6 +368,7 @@ public void creaXNOR() {
 			
 			if(evento1.getSource()==boton3) {
 				System.out.println(NOR.resultado());
+				C.ingresarcompuerta(new Compuerta_Logica(NOR.entrada1(),NOR.entrada2(),NOR.salida()));
 				
 			}
 			
@@ -361,6 +380,7 @@ public void creaXNOR() {
 			
 			if(evento1.getSource()==boton4) {
 				System.out.println(NOT.resultado());
+				C.ingresarcompuerta(new Compuerta_Logica(NOT.entrada1(),0,NOT.salida()));
 				
 			}
 			
@@ -372,6 +392,7 @@ public void creaXNOR() {
 			
 			if(evento1.getSource()==boton5) {
 				System.out.println(XOR.resultado());
+				C.ingresarcompuerta(new Compuerta_Logica(XOR.entrada1(),XOR.entrada2(),XOR.salida()));
 				
 			}
 			
@@ -383,6 +404,7 @@ public void creaXNOR() {
 			
 			if(evento1.getSource()==boton6) {
 				System.out.println(XNOR.resultado());
+				C.ingresarcompuerta(new Compuerta_Logica(XNOR.entrada1(),XNOR.entrada2(),XNOR.salida()));
 				
 			}
 			

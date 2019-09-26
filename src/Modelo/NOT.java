@@ -34,5 +34,15 @@ public class NOT extends Compuerta_Logica{
     return super.salida;
 	
 }
+    
+    public int entrada1() {
+ 	   return super.entrada;
+ 	   
+    } 
+    
+     
+   public int salida() {
+ 	  return super.salida;
+   }
 
 }
