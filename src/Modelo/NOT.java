@@ -35,6 +35,28 @@ public class NOT extends Compuerta_Logica{
 	
 }
     
+    @Override
+	public int resultado2(int ent, int ent2) {
+    	
+    	super.entrada = ent;
+    	
+    	super.setEntrada(super.entrada);
+    	
+ 
+    if (super.entrada ==0) {
+    	super.salida=1;
+    	super.setSalida(super.salida);	
+    }
+    else {
+    	super.salida=0;
+    	super.setSalida(super.salida);	
+    	
+    }
+    
+    return super.salida;
+	
+}
+    
     public int entrada1() {
  	   return super.entrada;
  	   

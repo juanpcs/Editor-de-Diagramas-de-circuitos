@@ -157,8 +157,8 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 			botonLineaV.addActionListener(this);
 			
 			botonprueba = new JButton();
-		    botonprueba.setBounds(402,0,200,20);
-		    botonprueba.setText("Prueba");
+		    botonprueba.setBounds(402,0,300,20);
+		    botonprueba.setText("Mostrar compuertas en la lista");
 			panelP.add(botonprueba);
 			botonprueba.addActionListener(this);
 			
@@ -324,87 +324,121 @@ public void creaXNOR() {
 			
 			
 			if(evento1.getSource()==botonAND){
-				
 				creaAND();
 			}
 			
 			
 			if(evento1.getSource()==boton) {
-				System.out.println(AND.resultado());
+				int numero = Integer.parseInt(JOptionPane.showInputDialog("¿Que desea realizar?\n 1) Ingresar entradas manualmente\n 2) utilizar datos de otra compuerta"));
+				if (numero==1) {
+				 AND.resultado();
 				
 				 C.ingresarcompuerta(new Compuerta_Logica(AND.entrada1(),AND.entrada2(),AND.salida()));
+				}
+				else
+					C.selecdatos(1);
 				
 			}
 			
 			if(evento1.getSource()==botonOR){
-				System.out.println("hola");
 				creaOR();
 			}
 			
 			
 			if(evento1.getSource()==boton1) {
-				System.out.println(OR.resultado());
+				int numero = Integer.parseInt(JOptionPane.showInputDialog("¿Que desea realizar?\n 1) Ingresar entradas manualmente\n 2) utilizar datos de otra compuerta"));
+				if (numero==1) {
+				 OR.resultado();
+				
 				 C.ingresarcompuerta(new Compuerta_Logica(OR.entrada1(),OR.entrada2(),OR.salida()));
+				}
+				else
+					C.selecdatos(2);
 				
 			}
 			
 			if(evento1.getSource()==botonNAND){
-				System.out.println("hola");
 				creaNAND();
 			}
 			
 			
 			if(evento1.getSource()==boton2) {
-				System.out.println(NAND.resultado());
-				C.ingresarcompuerta(new Compuerta_Logica(NAND.entrada1(),NAND.entrada2(),NAND.salida()));
+				int numero = Integer.parseInt(JOptionPane.showInputDialog("¿Que desea realizar?\n 1) Ingresar entradas manualmente\n 2) utilizar datos de otra compuerta"));
+				if (numero==1) {
+				 NAND.resultado();
 				
+				 C.ingresarcompuerta(new Compuerta_Logica(NAND.entrada1(),NAND.entrada2(),NAND.salida()));
+				}
+				else
+					C.selecdatos(3);
+
 			}
 			
 			if(evento1.getSource()==botonNOR){
-				System.out.println("hola");
 				creaNOR();
 			}
 			
 			
 			if(evento1.getSource()==boton3) {
-				System.out.println(NOR.resultado());
-				C.ingresarcompuerta(new Compuerta_Logica(NOR.entrada1(),NOR.entrada2(),NOR.salida()));
+				int numero = Integer.parseInt(JOptionPane.showInputDialog("¿Que desea realizar?\n 1) Ingresar entradas manualmente\n 2) utilizar datos de otra compuerta"));
+				if (numero==1) {
+				 NOR.resultado();
+				
+				 C.ingresarcompuerta(new Compuerta_Logica(NOR.entrada1(),NOR.entrada2(),NOR.salida()));
+				}
+				else
+					C.selecdatos(4);
 				
 			}
 			
 			if(evento1.getSource()==botonNOT){
-				System.out.println("hola");
 				creaNOT();
 			}
 			
 			
 			if(evento1.getSource()==boton4) {
-				System.out.println(NOT.resultado());
-				C.ingresarcompuerta(new Compuerta_Logica(NOT.entrada1(),0,NOT.salida()));
+				int numero = Integer.parseInt(JOptionPane.showInputDialog("¿Que desea realizar?\n 1) Ingresar entrada manualmente\n 2) utilizar dato de otra compuerta"));
+				if (numero==1) {
+				 NOT.resultado();
+				
+				 C.ingresarcompuerta(new Compuerta_Logica(NOT.entrada1(),0,NOT.salida()));
+				}
+				else
+					C.selecdatos(5);
 				
 			}
 			
 			if(evento1.getSource()==botonXOR){
-				System.out.println("hola");
 				creaXOR();
 			}
 			
 			
 			if(evento1.getSource()==boton5) {
-				System.out.println(XOR.resultado());
-				C.ingresarcompuerta(new Compuerta_Logica(XOR.entrada1(),XOR.entrada2(),XOR.salida()));
+				int numero = Integer.parseInt(JOptionPane.showInputDialog("¿Que desea realizar?\n 1) Ingresar entradas manualmente\n 2) utilizar datos de otra compuerta"));
+				if (numero==1) {
+				 XOR.resultado();
+				
+				 C.ingresarcompuerta(new Compuerta_Logica(XOR.entrada1(),XOR.entrada2(),XOR.salida()));
+				}
+				else
+					C.selecdatos(6);
 				
 			}
 			
 			if(evento1.getSource()==botonXNOR){
-				System.out.println("hola");
 				creaXNOR();
 			}
 			
 			
 			if(evento1.getSource()==boton6) {
-				System.out.println(XNOR.resultado());
-				C.ingresarcompuerta(new Compuerta_Logica(XNOR.entrada1(),XNOR.entrada2(),XNOR.salida()));
+				int numero = Integer.parseInt(JOptionPane.showInputDialog("¿Que desea realizar?\n 1) Ingresar entradas manualmente\n 2) utilizar datos de otra compuerta"));
+				if (numero==1) {
+				 XNOR.resultado();
+				
+				 C.ingresarcompuerta(new Compuerta_Logica(XNOR.entrada1(),XNOR.entrada2(),XNOR.salida()));
+				}
+				else
+					C.selecdatos(7);
 				
 			}
 			
@@ -443,7 +477,7 @@ public void creaXNOR() {
 			
 			
 		}
-		if(c instanceof JLabel && c.getX()<1000 && c.getY()>100) {
+		if(c instanceof JLabel && c.getX()<1000 && c.getY()>40) {
 			if(arg0.getX()==c.getX()) {
 				E5.setBounds(100, 200, arg0.getX(), 30);
 				
@@ -516,6 +550,8 @@ public void creaXNOR() {
 		E5.setBounds(100, 200, 50+1, 30);}
 		
 	}
+	
+
 
 	
 

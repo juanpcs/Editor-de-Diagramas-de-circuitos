@@ -35,6 +35,30 @@ public class NOR extends Compuerta_Logica{
     return super.salida;
 	
 }
+
+    @Override
+	public int resultado2(int ent, int ent2) {
+    	
+    	super.entrada = ent;
+    	super.entrada2 = ent2;
+    	
+    	super.setEntrada(super.entrada);
+    	super.setEntrada2(super.entrada2);
+ 
+    if (super.entrada !=0 || super.entrada2 !=0) {
+    	super.salida=0;
+    	super.setSalida(super.salida);	
+    }
+    else {
+    	super.salida=1;
+    	super.setSalida(super.salida);	
+    	
+    }
+    
+    return super.salida;
+	
+}    
+    
     
     public int entrada1() {
  	   return super.entrada;

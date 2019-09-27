@@ -3,6 +3,7 @@ package Modelo;
 public class Nodo extends Compuerta_Logica{
 	public Compuerta_Logica dato;
 	public Nodo siguiente;
+	public Nodo anterior;
 	
 	public Nodo(Compuerta_Logica CL) {
 		this.dato = CL;
@@ -23,6 +24,14 @@ public class Nodo extends Compuerta_Logica{
 
 	public void setSiguiente(Nodo siguiente) {
 		this.siguiente = siguiente;
+	}
+
+	public Nodo getAnterior() {
+		return anterior;
+	}
+
+	public void setAnterior(Nodo anterior) {
+		this.anterior = anterior;
 	}
 	
 	

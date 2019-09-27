@@ -49,6 +49,16 @@ return salida;
 	
 }
 
+public int resultado2(int ent,int ent2) {
+	return salida;
+}
+
+public String respuesta() {
+	String datos="";
+	datos= "\nEntrada 1: "+getEntrada()+ "\nEntrada 2: "+getEntrada2()+"\nSalida: "+getSalida()+"\n-----------------------------------";
+	return datos;
+	}
+
 	
 	
 
