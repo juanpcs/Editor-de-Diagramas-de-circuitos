@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"Modelo","l":"AND"},{"p":"Modelo","l":"Compuerta_Logica"},{"p":"Controlador","l":"controlador"},{"p":"vista2","l":"Interfaz2"},{"p":"Modelo","l":"NAND"},{"p":"Modelo","l":"Nodo"},{"p":"Modelo","l":"NOR"},{"p":"Modelo","l":"NOT"},{"p":"Modelo","l":"OR"},{"p":"Modelo","l":"XNOR"},{"p":"Modelo","l":"XOR"}]

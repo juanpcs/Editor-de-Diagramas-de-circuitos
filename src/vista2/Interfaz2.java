@@ -159,25 +159,25 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 		    panelP.add(E3);
 		    
 		    botonLineaH = new JButton();
-		    botonLineaH.setBounds(0,0,200,20);
+		    botonLineaH.setBounds(0,0,280,20);
 		    botonLineaH.setText("Insertar Conexion Horizontal");
 			panelP.add(botonLineaH);
 			botonLineaH.addActionListener(this);
 			
 			botonLineaV = new JButton();
-		    botonLineaV.setBounds(201,0,200,20);
+		    botonLineaV.setBounds(280,0,270,20);
 		    botonLineaV.setText("Insertar Conexion Vertical");
 			panelP.add(botonLineaV);
 			botonLineaV.addActionListener(this);
 			
 			botonprueba = new JButton();
-		    botonprueba.setBounds(402,0,300,20);
+		    botonprueba.setBounds(535,0,285,20);
 		    botonprueba.setText("Simulación del circuito");
 			panelP.add(botonprueba);
 			botonprueba.addActionListener(this);
 			
 			botontabla = new JButton();
-			botontabla.setBounds(703,0,300,20);
+			botontabla.setBounds(815,0,285,20);
 			botontabla.setText("Tablas de verdad");
 			panelP.add(botontabla);
 			botontabla.addActionListener(this);
