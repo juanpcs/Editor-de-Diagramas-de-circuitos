@@ -32,13 +32,23 @@ import Modelo.NOT;
 import Modelo.XOR;
 import Modelo.XNOR;
 
-public class Interfaz2 extends JFrame implements ActionListener, MouseMotionListener, MouseListener, MouseWheelListener{
-	//Declaracion de variables a utilizar y aplicacion de herencia
+/**
+
+ * Esta clase es la que permite al usuario interactuar con las distintas funciones que ofrece el programa
+
+ * @author: Juan Pablo Carrillo Salazar
+
+ * @version: java version "10.0.1" 2018-04-17 / Java(TM) SE Runtime Environment 18.3 (build 10.0.1+10)
+
+ */
+
+public class Interfaz2 extends JFrame implements ActionListener, MouseMotionListener, MouseListener {
+	//Declaracion de variables a utilizar
 	private int x,y;
 	private JPanel panelP;
 	private JLabel E1, E5, LV;
 	private JTextField caja1,caja2;
-	private JButton botonprueba,boton, boton1,boton2,boton3,boton4,boton5,boton6, botonLineaH, botonLineaV,botonAND,botonOR,botonNAND,botonNOR, botonNOT, botonXOR, botonXNOR;
+	private JButton botonprueba,botontabla,boton, boton1,boton2,boton3,boton4,boton5,boton6, botonLineaH, botonLineaV,botonAND,botonOR,botonNAND,botonNOR, botonNOT, botonXOR, botonXNOR;
 	int tamaño=100;
 	
 	AND AND= new AND();
@@ -51,7 +61,11 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 	Compuerta_Logica Con = new Compuerta_Logica();
 	controlador C=new controlador();
 	
-	//Creacion del constructor y de los componentes que integraran la aplicacion
+	/**
+
+	 * Constructor para la interfaz
+
+	 */
 	public Interfaz2() {
 		setTitle("Editor de diagramas logicos");
 		setSize(1300,700);
@@ -158,9 +172,15 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 			
 			botonprueba = new JButton();
 		    botonprueba.setBounds(402,0,300,20);
-		    botonprueba.setText("Mostrar compuertas en la lista");
+		    botonprueba.setText("Simulación del circuito");
 			panelP.add(botonprueba);
 			botonprueba.addActionListener(this);
+			
+			botontabla = new JButton();
+			botontabla.setBounds(703,0,300,20);
+			botontabla.setText("Tablas de verdad");
+			panelP.add(botontabla);
+			botontabla.addActionListener(this);
 			
 		    
 		
@@ -170,8 +190,11 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 			}
 	
 	
-	
-	//Funcion que creca una compuerta and y la muestra en el panel
+	/**
+
+	    * Método que crea una boton del tipo AND para su respectivo ingreso de entradas
+
+	    */
 	
 	public void creaAND() {
 	
@@ -186,7 +209,11 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 		boton.addMouseListener(this);
 		}
 	
-	//Funcion que crea una compuerta or y la muestra en el panel
+	/**
+
+	    * Método que crea una boton del tipo OR para su respectivo ingreso de entradas
+
+	    */
 	
 	public void creaOR() {
 	
@@ -200,6 +227,12 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 		boton1.addMouseListener(this);
 		}
 	
+	/**
+
+	    * Método que crea una boton del tipo NAND para su respectivo ingreso de entradas
+
+	    */
+	
 	public void creaNAND() {
 		
 		boton2 = new JButton();
@@ -211,6 +244,12 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 		boton2.addMouseMotionListener(this);
 		boton2.addMouseListener(this);
 		}
+	
+	/**
+
+	    * Método que crea una boton del tipo NOR para su respectivo ingreso de entradas
+
+	    */
 	
 	public void creaNOR() {
 		
@@ -224,6 +263,11 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 		boton3.addMouseListener(this);
 		}
 	
+	/**
+
+	    * Método que crea una boton del tipo NOT para su respectivo ingreso de entradas
+
+	    */
 	public void creaNOT() {
 		
 		boton4 = new JButton();
@@ -236,6 +280,11 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 		boton4.addMouseListener(this);
 		}
 	
+	/**
+
+	    * Método que crea una boton del tipo XOR para su respectivo ingreso de entradas
+
+	    */
 	public void creaXOR() {
 		
 		boton5 = new JButton();
@@ -248,6 +297,11 @@ public class Interfaz2 extends JFrame implements ActionListener, MouseMotionList
 		boton5.addMouseListener(this);
 		}
 	
+	/**
+
+	    * Método que crea una boton del tipo XNOR para su respectivo ingreso de entradas
+
+	    */
 public void creaXNOR() {
 		
 		boton6 = new JButton();
@@ -262,7 +316,11 @@ public void creaXNOR() {
 	
 	 
 	//funcion encaragada de crear las lines para representar las conexiones entre compuertas
-	
+/**
+
+ * Método que crea las lineas para representar las conexiones entre compuertas
+
+ */
 	public void LineaHorizontal() {
 		E5 =new JLabel("---------------------------------------------");
 	    E5.setFont(new Font("Serif", Font.PLAIN, 18));
@@ -273,7 +331,11 @@ public void creaXNOR() {
 	    E5.addMouseListener(this);
 	    panelP.add(E5);	}
 	
-	//funcion encaragada de crear las lines para representar las conexiones entre compuertas
+	/**
+
+	 * Método que crea las lineas para representar las conexiones entre compuertas
+
+	 */
 	
 		public void LineaVerticall() {
 			LV =new JLabel("|");
@@ -286,32 +348,11 @@ public void creaXNOR() {
 		    panelP.add(LV);	}
 	
 	
-	//posible funcion para crear compuertas mediante paneles
-	public void paneles() {
-		JPanel panel1=new JPanel();
-		panel1.setSize(150, 100);
-		panel1.setBackground(Color.black);
-		panel1.setName("Compuerta: ");
-		panel1.setLayout(null);
-		panel1.setLocation(500, 50);
-		
-		
-		caja1 = new JTextField();
-	    caja1.setBounds(10, 10, 20, 20);
-	    caja1.setBackground(Color.YELLOW);
-	    panel1.add(caja1);
-	    
-	    caja2 = new JTextField();
-	    caja2.setBounds(10, 70, 20, 20);
-	    caja2.setBackground(Color.YELLOW);
-	    panel1.add(caja2);
-	   
-		
-		panelP.add(panel1);
-		
-		
-	}
-	
+		/**
+
+		 * Método encargado de administrar las acciones realizadas en los componentes de la interfaz
+
+		 */
 	
 	@Override
 	public void actionPerformed(ActionEvent evento1) {
@@ -321,7 +362,9 @@ public void creaXNOR() {
 				JOptionPane.showMessageDialog(null, C.mostrar());
 			}
 			
-			
+			if(evento1.getSource()==botontabla){
+				JOptionPane.showMessageDialog(null, C.mostrart());
+			}
 			
 			if(evento1.getSource()==botonAND){
 				creaAND();
@@ -333,7 +376,7 @@ public void creaXNOR() {
 				if (numero==1) {
 				 AND.resultado();
 				
-				 C.ingresarcompuerta(new Compuerta_Logica(AND.entrada1(),AND.entrada2(),AND.salida()));
+				 C.ingresarcompuerta(new Compuerta_Logica(AND.entrada1(),AND.entrada2(),AND.salida(),"AND"));
 				}
 				else
 					C.selecdatos(1);
@@ -350,7 +393,7 @@ public void creaXNOR() {
 				if (numero==1) {
 				 OR.resultado();
 				
-				 C.ingresarcompuerta(new Compuerta_Logica(OR.entrada1(),OR.entrada2(),OR.salida()));
+				 C.ingresarcompuerta(new Compuerta_Logica(OR.entrada1(),OR.entrada2(),OR.salida(), "OR"));
 				}
 				else
 					C.selecdatos(2);
@@ -367,7 +410,7 @@ public void creaXNOR() {
 				if (numero==1) {
 				 NAND.resultado();
 				
-				 C.ingresarcompuerta(new Compuerta_Logica(NAND.entrada1(),NAND.entrada2(),NAND.salida()));
+				 C.ingresarcompuerta(new Compuerta_Logica(NAND.entrada1(),NAND.entrada2(),NAND.salida(),"NAND"));
 				}
 				else
 					C.selecdatos(3);
@@ -384,7 +427,7 @@ public void creaXNOR() {
 				if (numero==1) {
 				 NOR.resultado();
 				
-				 C.ingresarcompuerta(new Compuerta_Logica(NOR.entrada1(),NOR.entrada2(),NOR.salida()));
+				 C.ingresarcompuerta(new Compuerta_Logica(NOR.entrada1(),NOR.entrada2(),NOR.salida(),"NOR"));
 				}
 				else
 					C.selecdatos(4);
@@ -401,7 +444,7 @@ public void creaXNOR() {
 				if (numero==1) {
 				 NOT.resultado();
 				
-				 C.ingresarcompuerta(new Compuerta_Logica(NOT.entrada1(),0,NOT.salida()));
+				 C.ingresarcompuerta(new Compuerta_Logica(NOT.entrada1(),0,NOT.salida(),"NOT"));
 				}
 				else
 					C.selecdatos(5);
@@ -418,7 +461,7 @@ public void creaXNOR() {
 				if (numero==1) {
 				 XOR.resultado();
 				
-				 C.ingresarcompuerta(new Compuerta_Logica(XOR.entrada1(),XOR.entrada2(),XOR.salida()));
+				 C.ingresarcompuerta(new Compuerta_Logica(XOR.entrada1(),XOR.entrada2(),XOR.salida(),"XOR"));
 				}
 				else
 					C.selecdatos(6);
@@ -435,7 +478,7 @@ public void creaXNOR() {
 				if (numero==1) {
 				 XNOR.resultado();
 				
-				 C.ingresarcompuerta(new Compuerta_Logica(XNOR.entrada1(),XNOR.entrada2(),XNOR.salida()));
+				 C.ingresarcompuerta(new Compuerta_Logica(XNOR.entrada1(),XNOR.entrada2(),XNOR.salida(),"XNOR"));
 				}
 				else
 					C.selecdatos(7);
@@ -449,8 +492,6 @@ public void creaXNOR() {
 			if(evento1.getSource()==botonLineaV) {
 				LineaVerticall();}
 			
-			//if(evento1.getSource()==botonNAND) {
-				//System.out.print("|\n"+"|\n"+"|\n"+"|\n"+"|\n");;}
 			
 			
 			}
@@ -458,6 +499,12 @@ public void creaXNOR() {
 				JOptionPane.showMessageDialog(null, E);}
 		} 
 	
+	
+	/**
+
+	 * Método encargado de administrar las acciones relacionadas al arrastar el mouse
+
+	 */
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
 		Component c=arg0.getComponent();
@@ -491,7 +538,11 @@ public void creaXNOR() {
 		
 	}
 	
-	
+	/**
+
+	 * Método encargado de administrar las acciones relacionadas con clickear en el mouse
+
+	 */
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
@@ -515,6 +566,12 @@ public void creaXNOR() {
 		
 	}
 
+	
+	/**
+
+	 * Método que adminisra las acciones al presionar el mouse
+
+	 */
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		x=arg0.getX();
@@ -541,25 +598,6 @@ public void creaXNOR() {
 
 		}
 
-
-
-	@Override
-	public void mouseWheelMoved(MouseWheelEvent arg0) {
-		Component c=arg0.getComponent();
-		if(c instanceof JLabel && c.getX()<1000 && c.getY()>100) {
-		E5.setBounds(100, 200, 50+1, 30);}
-		
-	}
-	
-
-
-	
-
-	
-		
-		
-
-	
 		
 	}
 
